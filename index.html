@@ -39,23 +39,69 @@
                     </p>
                     <div class="cta-buttons">
                         <button class="btn btn-primary" onclick="showPage('projects')">View Projects</button>
+                        <button class="btn btn-secondary" onclick="showPage('blog')">Read Blog</button>
                         <button class="btn btn-secondary" onclick="showPage('contact')">Get in Touch</button>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <!-- Simple grid showcasing work areas -->
-                    <div class="work-grid">
-                        <div class="work-card" style="background: linear-gradient(135deg, #ff7f27 0%, #ff9950 100%);">
-                            <span class="work-label">Robotics & Automation</span>
+                    <!-- Mechanical Engineering visualization -->
+                    <div class="engineering-display">
+                        <!-- CAD / 3D Design representation -->
+                        <div class="work-section cad-section">
+                            <div class="section-icon">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Isometric cube representing CAD -->
+                                    <path d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M50 10 L50 50 M85 30 L50 50 M15 30 L50 50" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M15 70 L50 90 M85 70 L50 90" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <span class="section-label">CAD & 3D Design</span>
                         </div>
-                        <div class="work-card" style="background: linear-gradient(135deg, #ff9950 0%, #ffb073 100%);">
-                            <span class="work-label">Hardware Design</span>
+
+                        <!-- 3D Printing -->
+                        <div class="work-section print-section">
+                            <div class="section-icon">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- 3D printer nozzle with layers -->
+                                    <rect x="35" y="15" width="30" height="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M40 30 L45 40 L55 40 L60 30" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="30" y1="50" x2="70" y2="50" stroke="currentColor" stroke-width="3"/>
+                                    <line x1="25" y1="60" x2="75" y2="60" stroke="currentColor" stroke-width="3"/>
+                                    <line x1="20" y1="70" x2="80" y2="70" stroke="currentColor" stroke-width="3"/>
+                                    <line x1="15" y1="80" x2="85" y2="80" stroke="currentColor" stroke-width="3"/>
+                                </svg>
+                            </div>
+                            <span class="section-label">3D Printing</span>
                         </div>
-                        <div class="work-card" style="background: linear-gradient(135deg, #ffb073 0%, #ffc896 100%);">
-                            <span class="work-label">Software & Web</span>
+
+                        <!-- Electronics / Arduino -->
+                        <div class="work-section electronics-section">
+                            <div class="section-icon">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Circuit board pattern -->
+                                    <circle cx="25" cy="25" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="75" cy="25" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="25" cy="75" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="75" cy="75" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M30 25 L70 25 M25 30 L25 70 M75 30 L75 70 M30 75 L70 75" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="45" y="45" width="10" height="10" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <span class="section-label">Electronics & Arduino</span>
                         </div>
-                        <div class="work-card" style="background: linear-gradient(135deg, #ffc896 0%, #ff9950 100%);">
-                            <span class="work-label">IoT Systems</span>
+
+                        <!-- Prototyping / Assembly -->
+                        <div class="work-section prototype-section">
+                            <div class="section-icon">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Gear and tools -->
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                                    <path d="M50 25 L55 30 L50 35 L45 30 Z M75 50 L70 55 L65 50 L70 45 Z M50 75 L45 70 L50 65 L55 70 Z M25 50 L30 45 L35 50 L30 55 Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <span class="section-label">Prototyping</span>
                         </div>
                     </div>
                 </div>
