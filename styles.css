@@ -187,59 +187,22 @@ nav {
     justify-content: center;
 }
 
-/* Simple Work Grid */
-.engineering-display {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+/* Hero Logo Display */
+.hero-logo {
     width: 100%;
     height: 100%;
-    padding: 2rem;
-}
-
-.work-section {
-    background: var(--bg-secondary);
-    border: 2px solid var(--border);
-    border-radius: 4px;
-    padding: 2rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
+    padding: 2rem;
 }
 
-.work-section:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px var(--shadow);
-}
-
-.section-icon {
-    width: 80px;
-    height: 80px;
-    color: var(--accent);
-    transition: transform 0.3s ease;
-}
-
-.work-section:hover .section-icon {
-    transform: scale(1.1);
-}
-
-.section-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    text-align: center;
-    line-height: 1.4;
+.hero-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .cta-buttons {
@@ -247,6 +210,7 @@ nav {
     gap: 1rem;
     animation: slideUp 0.8s ease-out 0.6s both;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .btn {
@@ -713,23 +677,8 @@ nav {
         height: 400px;
     }
 
-    .engineering-display {
-        gap: 20px;
+    .hero-logo {
         padding: 1.5rem;
-    }
-
-    .work-section {
-        padding: 1.5rem;
-        gap: 1rem;
-    }
-
-    .section-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .section-label {
-        font-size: 0.85rem;
     }
 
     .projects-grid {
@@ -757,31 +706,16 @@ nav {
     }
 
     .hero-visual {
-        height: 350px;
+        height: 300px;
     }
 
-    .engineering-display {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .hero-logo {
         padding: 1rem;
-    }
-
-    .work-section {
-        padding: 1.5rem;
-        gap: 1rem;
-    }
-
-    .section-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .section-label {
-        font-size: 0.85rem;
     }
 
     .cta-buttons {
         gap: 0.75rem;
+        justify-content: center;
     }
 
     .projects-grid {
@@ -834,15 +768,6 @@ nav {
 @media (max-width: 480px) {
     .logo img {
         height: 32px;
-    }
-
-    .section-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .section-label {
-        font-size: 0.75rem;
     }
 
     .project-info {
