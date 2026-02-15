@@ -1,90 +1,90 @@
-# Multi-Page Portfolio Site
+# Lines and Layers Portfolio
 
-Your portfolio is now structured as separate HTML pages for full SEO support and scalability!
+Multi-page portfolio with proper folder structure for scalability!
 
-## 📁 File Structure
+## 📁 Folder Structure
 
 ```
 portfolio-site/
-├── index.html          # Homepage
-├── projects.html       # Projects listing  
-├── blog.html          # Blog listing
-├── contact.html       # Contact page
-├── logo.png           # Your logo
+├── index.html           # Homepage
+├── projects.html        # Projects listing  
+├── blog.html           # Blog listing
+├── contact.html        # Contact page
+├── logo.png            # Your logo
 ├── css/
-│   └── styles.css     # All styling
-├── images/            # Put all images here
-├── projects/          # Individual project pages
-│   └── autonomous-navigation.html  (example)
-└── blog/              # Individual blog posts
-    └── constraint-driven-design.html  (example)
+│   └── styles.css      # All styling
+├── images/             # Put all images here
+├── projects/           # Individual project pages
+│   └── autonomous-navigation.html
+└── blog/               # Individual blog posts
+    └── constraint-design.html
 ```
 
-## 🚀 GitHub Pages Setup
+## 🚀 GitHub Upload Instructions
 
-1. Push all files to your GitHub repo
-2. Go to Settings → Pages
-3. Set source to "main" branch, root folder
-4. Your site will be live at `https://yourusername.github.io/repo-name`
+**To upload with folders intact:**
 
-## ✅ SEO Benefits You Now Have
+1. **Via GitHub Web:**
+   - Go to your repo
+   - Click "Add file" → "Upload files"
+   - Drag the ENTIRE `portfolio-site` folder
+   - GitHub will preserve the folder structure!
 
-✓ Each page has its own URL  
-✓ Google can index every project and blog post  
-✓ Social media shows proper previews  
-✓ Direct links work (`yoursite.com/blog/my-post.html`)  
-✓ Browser history works properly  
-✓ Each page has custom meta descriptions
+2. **Via Command Line:**
+   ```bash
+   git add .
+   git commit -m "Add portfolio site"
+   git push
+   ```
+
+3. **Enable GitHub Pages:**
+   - Settings → Pages
+   - Source: main branch
+   - Folder: / (root)
+   - Save!
+
+## ✨ What's New - Brand Name in Nav
+
+The nav bar now shows:
+- **Logo** (left side)
+- **"Lines and Layers"** brand name (next to logo)
+- **Nav links** (right side: Home, Projects, Blog, Contact)
+
+## 🔗 Links in Content Are Styled
+
+When you add links in your blog posts or projects, they're automatically styled:
+- Orange color (`--accent`)
+- Underline on hover
+- Smooth transition
+
+Example:
+```html
+<p>Check out <a href="https://example.com">this resource</a> for more info.</p>
+```
 
 ## 📝 Adding New Projects
 
-### Step 1: Copy the template
-Copy `projects/autonomous-navigation.html` and rename it (e.g., `my-new-project.html`)
-
-### Step 2: Update the content
-Edit these sections in your new file:
-- `<title>` tag
-- `<meta name="description">` tag  
-- `<h1>` (project title)
-- Project metadata (year, role, tech)
-- All content in `.project-content`
-
-### Step 3: Add to projects.html
-Add a card linking to your new project:
+1. **Copy template:** Duplicate `projects/autonomous-navigation.html`
+2. **Rename:** `projects/my-new-project.html`
+3. **Edit content:** Update title, meta, content
+4. **Add to listing:** In `projects.html`:
 
 ```html
 <a href="projects/my-new-project.html" class="project-card">
-    <div class="project-image">07</div>
+    <div class="project-image">02</div>
     <div class="project-info">
         <h3>My New Project</h3>
-        <p>Short description here</p>
+        <p>Description here</p>
     </div>
 </a>
 ```
 
-### Adding Images to Projects
-
-```html
-<!-- In the project HTML file -->
-<img src="../images/my-robot.jpg" alt="Description">
-```
-
-Put images in the `/images` folder and reference with `../images/filename.jpg`
-
 ## 📰 Adding New Blog Posts
 
-### Step 1: Copy the template
-Copy `blog/constraint-driven-design.html` and rename it
-
-### Step 2: Update the content
-Edit:
-- `<title>` and `<meta>` tags
-- `<h1>` (blog title)
-- Date
-- All content in `.blog-detail-content`
-
-### Step 3: Add to blog.html
-Add a card:
+1. **Copy template:** Duplicate `blog/constraint-design.html`
+2. **Rename:** `blog/my-new-post.html`
+3. **Edit content**
+4. **Add to listing:** In `blog.html`:
 
 ```html
 <a href="blog/my-new-post.html" class="blog-post">
@@ -94,98 +94,68 @@ Add a card:
 </a>
 ```
 
-### Adding Images to Blog Posts
+## 📸 Adding Images
 
+**In main pages (index, projects, blog, contact):**
 ```html
-<img src="../images/diagram.png" alt="System diagram">
+<img src="images/my-photo.jpg" alt="Description">
 ```
 
-## 🎨 Customizing Contact Info
+**In project pages (projects/ folder):**
+```html
+<img src="../images/my-photo.jpg" alt="Description">
+```
 
-Edit `contact.html` and update:
-- Email link and text
+**In blog posts (blog/ folder):**
+```html
+<img src="../images/my-photo.jpg" alt="Description">
+```
+
+Put all images in the `images/` folder!
+
+## 🎨 Updating Contact Info
+
+Edit `contact.html`:
+- Email href and text
 - LinkedIn URL
 - GitHub URL  
 - Twitter URL
 
-## 📸 Managing Images
+## 🔍 SEO Benefits
 
-1. Put all images in `/images` folder
-2. Optimize before uploading (use TinyPNG, etc.)
-3. Use descriptive names: `robot-arm-closeup.jpg` not `IMG_1234.jpg`
-4. Reference from project pages: `../images/filename.jpg`
-5. Reference from main pages: `images/filename.jpg`
+✅ Each page has unique URL  
+✅ Google indexes everything  
+✅ Shareable links work  
+✅ Social media previews  
+✅ Browser history works
 
-## 🎯 Tips for Scale
+## 📱 All Responsive
 
-### When you have 10+ projects:
-Consider organizing: `projects/robotics/project1.html`
-
-### When you have 50+ blog posts:
-Add a year: `blog/2025/my-post.html`  
-Update links in `blog.html` accordingly
-
-### Want categories/tags?
-Create separate listing pages:  
-- `projects-robotics.html`
-- `projects-iot.html`  
-- `blog-tutorials.html`
-
-## ⚡ Performance Tips
-
-1. **Compress images**: Under 500KB each
-2. **Use JPG for photos**, PNG for diagrams
-3. **Add lazy loading**: `<img loading="lazy" ...>`
-4. **Minify CSS** when you have lots of content
-
-## 🔍 SEO Checklist
-
-For each new page, make sure you:
-- [ ] Update `<title>` tag (unique for each page)
-- [ ] Update `<meta name="description">` (155 chars max)
-- [ ] Use proper heading hierarchy (h1 → h2 → h3)
-- [ ] Add alt text to all images
-- [ ] Use descriptive filenames (not page1.html)
-
-## 🆚 Old vs New Structure
-
-**Old (single page):**
-- ❌ No SEO
-- ❌ Can't share specific projects
-- ❌ Everything loads at once
-
-**New (multi-page):**
-- ✅ Full SEO
-- ✅ Shareable URLs
-- ✅ Fast page loads
-- ✅ Scales to 100s of posts
-
-## 🔧 Common Tasks
-
-**Change colors:**
-Edit `css/styles.css`, top section (CSS variables)
-
-**Change fonts:**
-Edit font imports in `<head>` of each page
-
-**Add new main page:**
-1. Create `newpage.html`
-2. Add nav link to all existing pages
-3. Copy nav structure from any page
-
-## 📱 Mobile Friendly
-
-Everything is fully responsive! Test on:
+The site adapts perfectly to:
 - Desktop (1920px+)
-- Tablet (768px)
-- Phone (375px)
+- Tablet (768px-1024px)
+- Mobile (< 768px)
 
-## Need Help?
+## 🎯 Scaling Up
 
-The structure is simple:
-- Main pages (index, projects, blog, contact) = top level
-- Individual posts = in subfolders
-- All share same CSS = `css/styles.css`
-- All images = `images/` folder
+**10+ projects?** Keep adding to `projects/` folder  
+**50+ blog posts?** Consider sub-folders: `blog/2025/post-name.html`  
+**Categories?** Create `projects-robotics.html`, `projects-iot.html` etc.
 
-Just copy templates and update the content!
+The folder structure handles growth beautifully!
+
+## ⚡ Quick Tips
+
+- Optimize images before uploading (< 500KB each)
+- Use JPG for photos, PNG for diagrams
+- Keep filenames descriptive: `robot-arm-closeup.jpg` not `IMG_1234.jpg`
+- Each page needs unique title and meta description for SEO
+- Links in content are automatically styled (orange, hover underline)
+
+## 🔧 Customization
+
+**Colors:** Edit CSS variables in `css/styles.css`  
+**Fonts:** Change font imports in HTML `<head>` sections  
+**Brand name:** Search for "Lines and Layers" and replace
+
+That's it! Upload to GitHub and you're live!

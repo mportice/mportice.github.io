@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous Navigation System - Projects</title>
-    <meta name="description" content="Computer vision-based navigation system for autonomous mobile robots in warehouse environments.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Autonomous Navigation System - Lines and Layers</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div class="logo">
-            <a href="../index.html">
-                <img src="../logo.png" alt="Lines and Layers">
-            </a>
+        <div class="nav-left">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../logo.png" alt="Lines and Layers">
+                </a>
+            </div>
+            <div class="brand-name">Lines and Layers</div>
         </div>
         <ul class="nav-links">
             <li><a href="../index.html">Home</a></li>
@@ -26,7 +25,6 @@
         </ul>
     </nav>
 
-    <!-- Project Detail Page -->
     <main class="page-content">
         <div class="project-detail">
             <a href="../projects.html" class="back-button">← Back to Projects</a>
@@ -47,7 +45,7 @@
                         <span>Python, ROS, OpenCV</span>
                     </div>
                 </div>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">Developed a computer vision-based navigation system for autonomous mobile robots in warehouse environments.</p>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">Computer vision-based navigation system for autonomous mobile robots in warehouse environments.</p>
             </div>
 
             <div class="project-detail-image">01</div>
@@ -56,27 +54,23 @@
                 <h2>Overview</h2>
                 <p>This project focused on creating a robust navigation system capable of operating in dynamic warehouse environments. The system needed to handle real-time obstacle detection, path planning, and adaptive routing.</p>
                 
-                <!-- Example of adding an image mid-content -->
-                <!-- <img src="../images/robot-system-diagram.jpg" alt="System architecture diagram"> -->
+                <!-- Add images like this: -->
+                <!-- <img src="../images/robot-photo.jpg" alt="Robot in warehouse"> -->
                 
                 <h2>Technical Approach</h2>
-                <p>We implemented a multi-layered approach combining classical computer vision techniques with modern deep learning. The perception layer uses OpenCV for real-time image processing, while path planning leverages ROS navigation stack with custom cost functions.</p>
+                <p>We implemented a multi-layered approach combining classical computer vision techniques with modern deep learning. The perception layer uses OpenCV for real-time image processing.</p>
                 
-                <p>Key challenges included handling lighting variations, dynamic obstacles, and ensuring safe operation around human workers. We solved these through careful sensor fusion and predictive modeling of human movement patterns.</p>
-                
-                <!-- Another place you could add images -->
-                <!-- <img src="../images/robot-in-action.jpg" alt="Robot navigating warehouse"> -->
+                <p>Key challenges included handling lighting variations and dynamic obstacles. Read more about <a href="https://opencv.org">OpenCV capabilities</a> that made this possible.</p>
                 
                 <h2>Key Features</h2>
                 <ul>
                     <li>Real-time 3D mapping using LiDAR and stereo cameras</li>
                     <li>Predictive collision avoidance with 500ms lookahead</li>
                     <li>Dynamic replanning with sub-100ms response time</li>
-                    <li>Integration with warehouse management systems</li>
                 </ul>
                 
                 <h2>Results</h2>
-                <p>The system achieved 99.8% navigation success rate in field testing, with zero safety incidents over 10,000 hours of operation. It reduced warehouse picking time by 35% compared to manual operation.</p>
+                <p>The system achieved 99.8% navigation success rate in field testing, with zero safety incidents over 10,000 hours of operation.</p>
             </div>
         </div>
     </main>
