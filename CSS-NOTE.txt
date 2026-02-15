@@ -1,0 +1,11 @@
+IMPORTANT: CSS FILE NEEDED
+
+The file css/styles.css exists but needs the full CSS content.
+
+You can:
+1. Copy the CSS from your previous single-page version (styles.css from the old site)
+2. Or I can provide it separately
+
+The CSS is the same - just needs to be in the css/ folder instead of root.
+
+All HTML files are correctly linked to css/styles.css already!
