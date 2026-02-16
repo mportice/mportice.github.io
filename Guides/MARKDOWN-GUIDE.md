@@ -71,9 +71,17 @@ This guide shows you how to write blog posts and project pages without touching 
 
 ### Images
 ```markdown
-![alt text](../images/photo.jpg)
+![My robot in action](images/photo.jpg)
 ```
 Images are automatically centered!
+
+**Captions are automatic!** Whatever you put in the alt text (the part in square brackets) will automatically appear as a caption below the image in gray italic text.
+
+**Example:**
+```markdown
+![The robot navigating through the warehouse](images/robot.jpg)
+```
+This will show the image with "The robot navigating through the warehouse" as a caption below it!
 
 ### YouTube Videos
 ```html

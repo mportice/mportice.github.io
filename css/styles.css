@@ -711,6 +711,27 @@ nav {
     border: 1px solid var(--border);
 }
 
+/* Image with caption wrapper */
+.project-content figure,
+.blog-detail-content figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.project-content figure img,
+.blog-detail-content figure img {
+    margin: 0 auto;
+}
+
+.project-content figcaption,
+.blog-detail-content figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
+}
+
 /* YouTube video embeds - responsive aspect ratio */
 .project-content .video-container,
 .blog-detail-content .video-container {

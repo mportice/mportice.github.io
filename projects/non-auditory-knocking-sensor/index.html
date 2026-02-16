@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- 
+    FILE: Project Detail - Non-Auditory Knocking Sensor
+    URL: yoursite.com/projects/non-auditory-knocking-sensor/
+    PURPOSE: Full page for this specific project
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Auditory Knocking Sensor - Lines and Layers</title>
+    <meta name="description" content="A pair of devices to assist people with impaired hearing to be aware of guests at their door.">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="Lines and Layers">
+                </a>
+            </div>
+            <div class="brand-name">Lines and Layers</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../projects/" class="active">Projects</a></li>
+            <li><a href="../../blog/">Blog</a></li>
+            <li><a href="../../contact/">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-content">
+        <div class="project-detail">
+            <a href="../../projects/" class="back-button">← Back to Projects</a>
+            
+            <div class="project-detail-header">
+                <h1>Non-Auditory Knocking Sensor</h1>
+                <div class="project-meta">
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Year</span>
+                        <span>2024</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Role</span>
+                        <span>Technical Lead</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Tech</span>
+                        <span>ESP32, Bluetooth, Sensing</span>
+                    </div>
+                </div>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">A pair of devices to assist people with impaired hearing to be aware of guests at their door.</p>
+            </div>
+
+            <div class="project-content">
+                <h2>Overview</h2>
+<p>The Non-Auditory Knocking System (NAK), consists of two devices. The Sensing Device is mounted on the interior face of the user's door. When a visitor knocks on the door, the mounted device senses the vibrations in the door. It then wirelessly transmits this to the Alerting Device, which provides a visual indication that the door was knocked on.</p>
+
+<h2>Sensing Device</h2>
+<p>The Sensing Device detects vibrations through the use of a piezoelectric sensor. The input from this sensor goes into an ESP32 microcontroller, which compares it to a predetermined threshold input. If the vibration exceeds the given level, it is determined to be a knock, and the ESP32 sends a signal using the Bluetooth Low Energy protocol to the Alerting Device.</p>
+!<a href="images/SD_Schem.png">Sensing Device Schematic</a>
+!<a href="images/SD_Open.png">Sensing Device with Back Cover Removed</a>
+
+<h2>Alerting Device</h2>
+<p>The Alerting Device has it's own ESP32, which waits idle until it receives a signal from the Sensing Device. At this point, it enters alert mode, blinking an LED and displaying a message that the door has been knocked on. The LCD isn't entirely necessary with one pair of devices, but it was included for scalability in the future. The Alerting Device acts as a "home base", and can receive signal from multiple sensor devices, so the screen tells the user what exactly was sensed.</p>
+
+!<a href="images/AD_Schem.png">Alerting Device Schematic</a>
+
+<h2>System in Use</h2>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/Ufd0KWgbq8U" allowfullscreen></iframe>
+</div>
+<h2>Results</h2>
+<p>The system works very reliably in our testing. When held against a surface, a spring holds the sensor against the surface, making our system extremely sensitive to vibrations. We were able to filter these out to ignore the weaker vibrations and ignore most of the false alerts. The transmission over Bluetooth was extremely reliable.</p>
+<p>When mounted to the door using adhesive strips, it seemed to dampen the vibrations substantially. We believe that the combination of the spring and the small amount of foam in the mounting strips allowed much of the vibration to be absorbed before being sensed by our device.</p>
+<p>As a first prototype, we found the system works conceptually, but the mounting method will need to be reevaluated.</p>
+!<a href="images/System_Photo.png">Photo of NAK System fully assembled</a>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+    // Automatically add captions from alt text
+    document.querySelectorAll('.project-content img').forEach(img => {
+        if (img.alt) {
+            const figure = document.createElement('figure');
+            img.parentNode.insertBefore(figure, img);
+            figure.appendChild(img);
+            const caption = document.createElement('figcaption');
+            caption.textContent = img.alt;
+            figure.appendChild(caption);
+        }
+    });
+    </script>
+</body>
+</html>

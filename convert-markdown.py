@@ -154,6 +154,20 @@ def create_blog_post(title, author, date, content, filename):
             </div>
         </div>
     </main>
+
+    <script>
+    // Automatically add captions from alt text
+    document.querySelectorAll('.blog-detail-content img').forEach(img => {{
+        if (img.alt) {{
+            const figure = document.createElement('figure');
+            img.parentNode.insertBefore(figure, img);
+            figure.appendChild(img);
+            const caption = document.createElement('figcaption');
+            caption.textContent = img.alt;
+            figure.appendChild(caption);
+        }}
+    }});
+    </script>
 </body>
 </html>'''
     
@@ -235,6 +249,20 @@ def create_project_page(title, year, role, tech, description, content, filename)
             </div>
         </div>
     </main>
+
+    <script>
+    // Automatically add captions from alt text
+    document.querySelectorAll('.project-content img').forEach(img => {{
+        if (img.alt) {{
+            const figure = document.createElement('figure');
+            img.parentNode.insertBefore(figure, img);
+            figure.appendChild(img);
+            const caption = document.createElement('figcaption');
+            caption.textContent = img.alt;
+            figure.appendChild(caption);
+        }}
+    }});
+    </script>
 </body>
 </html>'''
     
