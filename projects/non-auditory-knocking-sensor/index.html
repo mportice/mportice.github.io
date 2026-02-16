@@ -61,13 +61,13 @@
 
 <h2>Sensing Device</h2>
 <p>The Sensing Device detects vibrations through the use of a piezoelectric sensor. The input from this sensor goes into an ESP32 microcontroller, which compares it to a predetermined threshold input. If the vibration exceeds the given level, it is determined to be a knock, and the ESP32 sends a signal using the Bluetooth Low Energy protocol to the Alerting Device.</p>
-<img src="/images/SD_Schem.png" alt='Sensing Device Schematic'>
-<img src="/images/SD_Open.png" alt='Sensing Device with Back Cover Removed'>
+<img src="images/SD_Schem.png" alt='Sensing Device Schematic'>
+<img src="images/SD_Open.png" alt='Sensing Device with Back Cover Removed'>
 
 <h2>Alerting Device</h2>
 <p>The Alerting Device has it's own ESP32, which waits idle until it receives a signal from the Sensing Device. At this point, it enters alert mode, blinking an LED and displaying a message that the door has been knocked on. The LCD isn't entirely necessary with one pair of devices, but it was included for scalability in the future. The Alerting Device acts as a "home base", and can receive signal from multiple sensor devices, so the screen tells the user what exactly was sensed.</p>
 
-<img src="/images/AD_Schem.png" alt='Alerting Device Schematic'>
+<img src="images/AD_Schem.png" alt='Alerting Device Schematic'>
 
 <h2>System in Use</h2>
 <div class="video-container">
