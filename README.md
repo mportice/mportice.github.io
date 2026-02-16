@@ -46,13 +46,15 @@ portfolio-site/
 ## ✨ What's New - Brand Name in Nav
 
 The nav bar now shows:
-- **Logo** (left side)
-- **"Lines and Layers"** brand name (next to logo)
+- **Logo** (left side) - also appears as favicon in browser tabs!
+- **"Lines and Layers"** brand name (styled with orange accent line)
 - **Nav links** (right side: Home, Projects, Blog, Contact)
+
+On mobile, the brand name hides to save space.
 
 ## 🔗 Links in Content Are Styled
 
-When you add links in your blog posts or projects, they're automatically styled:
+Links **only in project and blog content** are styled:
 - Orange color (`--accent`)
 - Underline on hover
 - Smooth transition
