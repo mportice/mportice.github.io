@@ -21,8 +21,17 @@ def markdown_to_html(markdown_text):
     html = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', html)
     html = re.sub(r'\*(.*?)\*', r'<em>\1</em>', html)
     
-    # Links
-    html = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', html)
+    # Links - external links open in new tab
+    def replace_link(match):
+        text = match.group(1)
+        url = match.group(2)
+        # Check if it's an external link (starts with http)
+        if url.startswith('http://') or url.startswith('https://'):
+            return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{text}</a>'
+        else:
+            return f'<a href="{url}">{text}</a>'
+    
+    html = re.sub(r'\[(.*?)\]\((.*?)\)', replace_link, html)
     
     # Images
     html = re.sub(r'!\[(.*?)\]\((.*?)\)', r'<img src="\2" alt="\1">', html)
@@ -89,6 +98,10 @@ def create_blog_post(title, date, content, filename):
     """Create a complete blog post HTML file"""
     html_content = markdown_to_html(content)
     
+    # Create blog directory if it doesn't exist
+    import os
+    os.makedirs('blog', exist_ok=True)
+    
     template = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -143,6 +156,10 @@ def create_blog_post(title, date, content, filename):
 def create_project_page(title, year, role, tech, description, content, filename):
     """Create a complete project page HTML file"""
     html_content = markdown_to_html(content)
+    
+    # Create projects directory if it doesn't exist
+    import os
+    os.makedirs('projects', exist_ok=True)
     
     template = f'''<!DOCTYPE html>
 <html lang="en">
