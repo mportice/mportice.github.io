@@ -30,7 +30,7 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    padding: 2rem 4rem;
+    padding: 1.5rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,7 +115,7 @@ nav {
 
 .page-content {
     min-height: 100vh;
-    padding: 8rem 4rem 4rem;
+    padding: 7rem 4rem 4rem;
 }
 
 .project-content a,
@@ -515,8 +515,8 @@ nav {
 }
 
 @media (max-width: 1024px) {
-    nav { padding: 1.5rem 2rem; }
-    .page-content { padding: 6rem 2rem 2rem; }
+    nav { padding: 1.25rem 2rem; }
+    .page-content { padding: 5.5rem 2rem 2rem; }
     .hero-content { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
     .nav-left { gap: 1.5rem; }
@@ -526,7 +526,7 @@ nav {
     nav { padding: 1rem 1.5rem; }
     .nav-left { gap: 1rem; }
     .brand-name { display: none; }
-    .page-content { padding: 6rem 1.5rem 2rem; }
+    .page-content { padding: 5rem 1.5rem 2rem; }
     .hero-visual { height: 300px; }
     .projects-grid { grid-template-columns: 1fr; }
     .btn { width: 100%; text-align: center; }
