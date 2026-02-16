@@ -514,6 +514,18 @@ nav {
     text-align: left;
 }
 
+/* Headshot image in About Me section */
+.about-me .headshot {
+    float: right;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures image fills circle properly */
+    margin: 0 0 1.5rem 2rem; /* Space around the image */
+    border: 3px solid var(--accent); /* Orange border */
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
 .about-me h2 {
     font-size: clamp(1.8rem, 4vw, 2.2rem);
     font-weight: 600;
