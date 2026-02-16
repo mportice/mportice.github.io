@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <!-- 
-    FILE: Projects Listing Page
-    URL: yoursite.com/projects/
-    PURPOSE: Shows grid of all projects
+    FILE: Homepage / Landing Page
+    URL: yoursite.com/
+    PURPOSE: Main landing page with hero section
 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Lines and Layers</title>
-    <link rel="icon" type="image/png" href="../favicon.png">
+    <title>Lines and Layers - Engineering & Design Portfolio</title>
+    <meta name="description" content="I create thoughtful solutions at the intersection of form and function.">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <nav>
         <div class="nav-left">
             <div class="logo">
-                <a href="../">
-                    <img src="../logo.png" alt="Lines and Layers">
+                <a href="index.html">
+                    <img src="logo.png" alt="Lines and Layers">
                 </a>
             </div>
             <div class="brand-name">Lines and Layers</div>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="contact/">Contact</a></li>
         </ul>
     </nav>
 
     <main class="page-content">
-        <div class="projects-container">
-            <div class="section-header">
-                <h1>Selected Work</h1>
-                <p>A collection of engineering and design projects</p>
-            </div>
-            <div class="projects-grid">
-                <a href="projects/autonomous-navigation/" class="project-card">
-                    <div class="project-image">01</div>
-                    <div class="project-info">
-                        <h3>Autonomous Navigation System</h3>
-                        <p>Computer vision and path planning for mobile robotics</p>
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Engineering meets
+                        <span class="accent-text">Design</span>
+                    </h1>
+                    <p>
+                        I create thoughtful solutions at the intersection of form and function. 
+                        With a background in engineering and a passion for design, I build products 
+                        that are both technically robust and beautifully crafted.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="projects/" class="btn btn-primary">View Projects</a>
+                        <a href="contact/" class="btn btn-secondary">Get in Touch</a>
+                        <a href="blog/" class="btn btn-primary">Read Blog</a>
                     </div>
-                </a>
-                <!-- Add more projects here -->
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-logo">
+                        <img src="logo.png" alt="Lines and Layers Logo">
+                    </div>
+                </div>
             </div>
         </div>
     </main>

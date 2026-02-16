@@ -168,12 +168,6 @@ nav {
     border-bottom: 1px solid transparent;
 }
 
-/* External links (starting with http) open in new tab */
-    /* .project-content a[href^="http"],
-    /* .blog-detail-content a[href^="http"] {
-/* Already handled in HTML with target="_blank" */
-    /* }
-
 /* Content link hover - darker + underline appears */
 .project-content a:hover,
 .blog-detail-content a:hover {
