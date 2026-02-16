@@ -75,6 +75,25 @@ This guide shows you how to write blog posts and project pages without touching 
 ```
 Images are automatically centered!
 
+### YouTube Videos
+```html
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+</div>
+```
+Replace `VIDEO_ID` with the ID from the YouTube URL.
+Example: `https://youtube.com/watch?v=dQw4w9WgXcQ` → use `dQw4w9WgXcQ`
+
+Videos are responsive and maintain 16:9 aspect ratio!
+
+### PDF Downloads
+```html
+<a href="../images/document.pdf" class="pdf-link" download>
+📄 Download My Resume (PDF)
+</a>
+```
+Put your PDF in the `images/` folder, styled as a button automatically!
+
 ### Lists
 
 **Bullet points:**

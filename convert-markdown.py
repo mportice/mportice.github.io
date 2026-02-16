@@ -94,7 +94,7 @@ def markdown_to_html(markdown_text):
     
     return '\n'.join(result)
 
-def create_blog_post(title, date, content, filename):
+def create_blog_post(title, author, date, content, filename):
     """Create a complete blog post HTML file"""
     html_content = markdown_to_html(content)
     
@@ -138,6 +138,7 @@ def create_blog_post(title, date, content, filename):
             <div class="blog-detail-header">
                 <div class="blog-date">{date}</div>
                 <h1>{title}</h1>
+                <div class="blog-author">By {author}</div>
             </div>
 
             <div class="blog-detail-content">
@@ -242,6 +243,7 @@ def main():
         # Blog post
         print("\n--- Blog Post ---")
         title = input("Title: ").strip()
+        author = input("Author Name: ").strip()
         date = input("Date (YYYY.MM.DD) [press Enter for today]: ").strip()
         if not date:
             date = datetime.now().strftime("%Y.%m.%d")
@@ -262,7 +264,7 @@ def main():
         filename_base = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
         filename = f"blog/{filename_base}.html"
         
-        create_blog_post(title, date, content, filename)
+        create_blog_post(title, author, date, content, filename)
         
         # Show how to add to blog.html
         print("\n" + "=" * 50)
