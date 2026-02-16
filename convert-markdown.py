@@ -287,7 +287,7 @@ def main():
         print("📝 Next steps:")
         print("=" * 50)
         print(f"\n1. Add this card to blog/index.html:\n")
-        print(f'''<a href="blog/{filename_base}/" class="blog-post">
+        print(f'''<a href="{filename_base}/" class="blog-post">
     <div class="blog-date">{date}</div>
     <h3>{title}</h3>
     <p>Brief excerpt here...</p>
@@ -327,7 +327,7 @@ def main():
         print("📝 Next steps:")
         print("=" * 50)
         print(f"\n1. Add this card to projects/index.html:\n")
-        print(f'''<a href="projects/{filename_base}/" class="project-card">
+        print(f'''<a href="{filename_base}/" class="project-card">
     <div class="project-image">##</div>
     <div class="project-info">
         <h3>{title}</h3>
