@@ -372,36 +372,18 @@ nav {
     color: var(--accent);
     opacity: 0.4; /* Only for placeholder text */
     object-fit: cover; /* For actual images */
-    transition: all 0.3s ease;
-    position: relative;
+    transition: all 0.4s ease;
 }
 
 /* Make actual img tags full opacity (not washed out) */
 .project-card img.project-image {
     opacity: 1;
+    filter: none;
 }
 
-/* Orange overlay on hover */
+/* Orange tint on hover using sepia + hue-rotate */
 .project-card:hover img.project-image {
-    filter: brightness(0.8);
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    aspect-ratio: 16/9;
-    background: var(--accent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    mix-blend-mode: multiply;
-}
-
-.project-card:hover::before {
-    opacity: 0.2;
+    filter: sepia(0.5) saturate(2) hue-rotate(-10deg) brightness(0.9);
 }
 
 /* Project card text area */
