@@ -21,6 +21,9 @@ def markdown_to_html(markdown_text):
     html = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', html)
     html = re.sub(r'\*(.*?)\*', r'<em>\1</em>', html)
     
+    # Images FIRST (before links, since ![text](url) contains [text](url))
+    html = re.sub(r'!\[(.*?)\]\((.*?)\)', r'<img src="\2" alt="\1">', html)
+    
     # Links - external links open in new tab
     def replace_link(match):
         text = match.group(1)
@@ -32,9 +35,6 @@ def markdown_to_html(markdown_text):
             return f'<a href="{url}">{text}</a>'
     
     html = re.sub(r'\[(.*?)\]\((.*?)\)', replace_link, html)
-    
-    # Images
-    html = re.sub(r'!\[(.*?)\]\((.*?)\)', r'<img src="\2" alt="\1">', html)
     
     # Unordered lists
     lines = html.split('\n')
