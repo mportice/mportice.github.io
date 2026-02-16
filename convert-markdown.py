@@ -98,42 +98,50 @@ def create_blog_post(title, author, date, content, filename):
     """Create a complete blog post HTML file"""
     html_content = markdown_to_html(content)
     
-    # Create blog directory if it doesn't exist
+    # Create blog directory structure if it doesn't exist
     import os
-    os.makedirs('blog', exist_ok=True)
+    folder_name = filename.replace('blog/', '').replace('/index.html', '')
+    blog_folder = f'blog/{folder_name}'
+    os.makedirs(blog_folder, exist_ok=True)
+    os.makedirs(f'{blog_folder}/images', exist_ok=True)
     
     template = f'''<!DOCTYPE html>
+<!-- 
+    FILE: Blog Post - {title}
+    URL: yoursite.com/blog/{folder_name}/
+    PURPOSE: Full page for this specific blog post
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} - Lines and Layers</title>
     <meta name="description" content="{title}">
-    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="icon" type="image/png" href="../../favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
     <nav>
         <div class="nav-left">
             <div class="logo">
-                <a href="../index.html">
-                    <img src="../logo.png" alt="Lines and Layers">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="Lines and Layers">
                 </a>
             </div>
             <div class="brand-name">Lines and Layers</div>
         </div>
         <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-            <li><a href="../blog.html" class="active">Blog</a></li>
-            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../projects/">Projects</a></li>
+            <li><a href="../../blog/" class="active">Blog</a></li>
+            <li><a href="../../contact/">Contact</a></li>
         </ul>
     </nav>
 
     <main class="page-content">
         <div class="blog-detail">
-            <a href="../blog.html" class="back-button">← Back to Blog</a>
+            <a href="../../blog/" class="back-button">← Back to Blog</a>
             
             <div class="blog-detail-header">
                 <div class="blog-date">{date}</div>
@@ -158,42 +166,50 @@ def create_project_page(title, year, role, tech, description, content, filename)
     """Create a complete project page HTML file"""
     html_content = markdown_to_html(content)
     
-    # Create projects directory if it doesn't exist
+    # Create projects directory structure if it doesn't exist
     import os
-    os.makedirs('projects', exist_ok=True)
+    folder_name = filename.replace('projects/', '').replace('/index.html', '')
+    project_folder = f'projects/{folder_name}'
+    os.makedirs(project_folder, exist_ok=True)
+    os.makedirs(f'{project_folder}/images', exist_ok=True)
     
     template = f'''<!DOCTYPE html>
+<!-- 
+    FILE: Project Detail - {title}
+    URL: yoursite.com/projects/{folder_name}/
+    PURPOSE: Full page for this specific project
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} - Lines and Layers</title>
     <meta name="description" content="{description}">
-    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="icon" type="image/png" href="../../favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
     <nav>
         <div class="nav-left">
             <div class="logo">
-                <a href="../index.html">
-                    <img src="../logo.png" alt="Lines and Layers">
+                <a href="../../index.html">
+                    <img src="../../logo.png" alt="Lines and Layers">
                 </a>
             </div>
             <div class="brand-name">Lines and Layers</div>
         </div>
         <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects.html" class="active">Projects</a></li>
-            <li><a href="../blog.html">Blog</a></li>
-            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../projects/" class="active">Projects</a></li>
+            <li><a href="../../blog/">Blog</a></li>
+            <li><a href="../../contact/">Contact</a></li>
         </ul>
     </nav>
 
     <main class="page-content">
         <div class="project-detail">
-            <a href="../projects.html" class="back-button">← Back to Projects</a>
+            <a href="../../projects/" class="back-button">← Back to Projects</a>
             
             <div class="project-detail-header">
                 <h1>{title}</h1>
@@ -262,7 +278,7 @@ def main():
         
         # Generate filename from title
         filename_base = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
-        filename = f"blog/{filename_base}.html"
+        filename = f"blog/{filename_base}/index.html"
         
         create_blog_post(title, author, date, content, filename)
         
@@ -270,12 +286,14 @@ def main():
         print("\n" + "=" * 50)
         print("📝 Next steps:")
         print("=" * 50)
-        print(f"\n1. Add this card to blog.html:\n")
-        print(f'''<a href="blog/{filename_base}.html" class="blog-post">
+        print(f"\n1. Add this card to blog/index.html:\n")
+        print(f'''<a href="blog/{filename_base}/" class="blog-post">
     <div class="blog-date">{date}</div>
     <h3>{title}</h3>
     <p>Brief excerpt here...</p>
 </a>''')
+        print(f"\n2. Add images to: blog/{filename_base}/images/")
+        print(f"   Reference them as: images/photo.jpg")
         
     elif choice == "2":
         # Project page
@@ -300,7 +318,7 @@ def main():
         
         # Generate filename from title
         filename_base = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
-        filename = f"projects/{filename_base}.html"
+        filename = f"projects/{filename_base}/index.html"
         
         create_project_page(title, year, role, tech, description, content, filename)
         
@@ -308,14 +326,16 @@ def main():
         print("\n" + "=" * 50)
         print("📝 Next steps:")
         print("=" * 50)
-        print(f"\n1. Add this card to projects.html:\n")
-        print(f'''<a href="projects/{filename_base}.html" class="project-card">
+        print(f"\n1. Add this card to projects/index.html:\n")
+        print(f'''<a href="projects/{filename_base}/" class="project-card">
     <div class="project-image">##</div>
     <div class="project-info">
         <h3>{title}</h3>
         <p>{description}</p>
     </div>
 </a>''')
+        print(f"\n2. Add images to: projects/{filename_base}/images/")
+        print(f"   Reference them as: images/photo.jpg")
     
     else:
         print("Invalid choice. Please run again and enter 1 or 2.")
