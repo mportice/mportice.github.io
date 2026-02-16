@@ -263,6 +263,7 @@ def main():
         date = input("Date (YYYY.MM.DD) [press Enter for today]: ").strip()
         if not date:
             date = datetime.now().strftime("%Y.%m.%d")
+        description = input("Short Description (for listing page): ").strip()
         
         print("\nEnter your content in Markdown format.")
         print("When done, type 'END' on a new line and press Enter:\n")
@@ -290,7 +291,7 @@ def main():
         print(f'''<a href="{filename_base}/" class="blog-post">
     <div class="blog-date">{date}</div>
     <h3>{title}</h3>
-    <p>Brief excerpt here...</p>
+    <p>{description}</p>
 </a>''')
         print(f"\n2. Add images to: blog/{filename_base}/images/")
         print(f"   Reference them as: images/photo.jpg")
