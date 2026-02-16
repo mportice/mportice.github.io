@@ -1,30 +1,43 @@
+/* ================================
+   CSS VARIABLES - THEME COLORS
+   Change these to update your entire site's color scheme
+   ================================ */
 :root {
-    --bg-primary: #fafafa;
-    --bg-secondary: #ffffff;
-    --bg-hover: #fff5ee;
-    --text-primary: #1a1a1a;
-    --text-secondary: #666666;
-    --accent: #ff7f27;
-    --accent-dark: #e66b1a;
-    --accent-light: #ffb380;
-    --border: #e8e8e8;
-    --shadow: rgba(255, 127, 39, 0.2);
+    --bg-primary: #fafafa;        /* Main page background */
+    --bg-secondary: #ffffff;      /* Cards and content boxes */
+    --bg-hover: #fff5ee;          /* Hover state backgrounds */
+    --text-primary: #1a1a1a;      /* Main text (headings, body) */
+    --text-secondary: #666666;    /* Secondary text (descriptions) */
+    --accent: #ff7f27;            /* Brand orange - buttons, links, highlights */
+    --accent-dark: #e66b1a;       /* Darker orange for hover states */
+    --accent-light: #ffb380;      /* Lighter orange (currently unused) */
+    --border: #e8e8e8;            /* Border color for cards */
+    --shadow: rgba(255, 127, 39, 0.2); /* Orange-tinted shadow */
 }
 
+/* ================================
+   BASE STYLES
+   ================================ */
+/* Reset default browser spacing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Main body - sets default font and background */
 body {
     font-family: 'Archivo', -apple-system, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* ================================
+   NAVIGATION BAR
+   Fixed at top, blurs content behind it
+   ================================ */
 nav {
     position: fixed;
     top: 0;
@@ -34,63 +47,72 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 1000; /* Stays above all content */
     background: linear-gradient(180deg, rgba(250, 250, 250, 0.98) 0%, rgba(250, 250, 250, 0) 100%);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Blurs content scrolling behind */
 }
 
-/* Thinner nav on detail pages */
+/* Thinner nav on project and blog detail pages for more reading space */
 .project-detail nav,
 .blog-detail nav {
     padding: 1rem 4rem;
 }
 
+/* Adjust page content to match thinner nav */
 .project-detail .page-content,
 .blog-detail .page-content {
     padding-top: 6rem;
 }
 
+/* Left side of nav - contains logo and brand name */
 .nav-left {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
+/* Logo container */
 .logo {
     display: flex;
     align-items: center;
 }
 
+/* Logo link - clickable, goes to homepage */
 .logo a {
     display: flex;
     align-items: center;
     transition: transform 0.3s ease;
 }
 
+/* Logo hover effect - slides right slightly */
 .logo a:hover {
     transform: translateX(4px);
 }
 
+/* Logo image sizing */
 .logo img {
     height: 40px;
     width: auto;
 }
 
+/* Brand name "Lines and Layers" with orange accent line */
 .brand-name {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: 0.05em;
     padding-left: 1.5rem;
-    border-left: 2px solid var(--accent);
+    border-left: 2px solid var(--accent); /* Orange vertical line */
 }
 
+/* Navigation links container (Home, Projects, Blog, Contact) */
 .nav-links {
     display: flex;
     gap: 3rem;
     list-style: none;
 }
 
+/* Individual nav link styling */
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
@@ -101,6 +123,7 @@ nav {
     position: relative;
 }
 
+/* Underline that appears on hover */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -112,23 +135,31 @@ nav {
     transition: width 0.3s ease;
 }
 
+/* Nav link hover - darker text */
 .nav-links a:hover {
     color: var(--text-primary);
 }
 
+/* Nav link hover - underline expands */
 .nav-links a:hover::after {
     width: 100%;
 }
 
+/* Active nav link (current page) - orange color */
 .nav-links a.active {
     color: var(--accent);
 }
 
+/* ================================
+   PAGE CONTENT
+   Main content area below nav
+   ================================ */
 .page-content {
-    min-height: 100vh;
-    padding: 7rem 4rem 4rem;
+    min-height: 100vh; /* At least full screen height */
+    padding: 7rem 4rem 4rem; /* Extra top padding for fixed nav */
 }
 
+/* Link styling ONLY in project and blog content areas */
 .project-content a,
 .blog-detail-content a {
     color: var(--accent);
@@ -137,18 +168,24 @@ nav {
     border-bottom: 1px solid transparent;
 }
 
+/* Content link hover - darker + underline appears */
 .project-content a:hover,
 .blog-detail-content a:hover {
     color: var(--accent-dark);
     border-bottom: 1px solid var(--accent-dark);
 }
 
+/* ================================
+   HERO SECTION (Homepage)
+   Large landing area with title and logo
+   ================================ */
 .hero {
     max-width: 1400px;
     margin: 0 auto;
     padding: 4rem 0;
 }
 
+/* Hero content - 2 columns on desktop */
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -156,8 +193,9 @@ nav {
     align-items: center;
 }
 
+/* Main hero title "Engineering meets Design" */
 .hero-text h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 5rem); /* Responsive size */
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2rem;
@@ -165,11 +203,13 @@ nav {
     word-wrap: break-word;
 }
 
+/* "Design" text in orange */
 .hero-text .accent-text {
     color: var(--accent);
     display: block;
 }
 
+/* Hero description paragraph */
 .hero-text p {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--text-secondary);
@@ -177,6 +217,7 @@ nav {
     margin-bottom: 3rem;
 }
 
+/* Right side - logo display area */
 .hero-visual {
     position: relative;
     height: 500px;
@@ -185,6 +226,7 @@ nav {
     justify-content: center;
 }
 
+/* Logo container in hero */
 .hero-logo {
     width: 100%;
     height: 100%;
@@ -194,6 +236,7 @@ nav {
     padding: 2rem;
 }
 
+/* Logo image - scales to fit container */
 .hero-logo img {
     max-width: 100%;
     max-height: 100%;
@@ -202,6 +245,11 @@ nav {
     object-fit: contain;
 }
 
+/* ================================
+   BUTTONS
+   Call-to-action buttons (View Projects, etc.)
+   ================================ */
+/* Button container */
 .cta-buttons {
     display: flex;
     gap: 1rem;
@@ -209,6 +257,7 @@ nav {
     justify-content: flex-start;
 }
 
+/* Base button styling */
 .btn {
     padding: 1rem 2.5rem;
     font-size: 1rem;
@@ -222,39 +271,49 @@ nav {
     display: inline-block;
 }
 
+/* Primary button - orange filled */
 .btn-primary {
     background: var(--accent);
     color: #ffffff;
     box-shadow: 0 4px 20px var(--shadow);
 }
 
+/* Primary button hover - lifts up with darker color */
 .btn-primary:hover {
     background: var(--accent-dark);
     transform: translateY(-2px);
     box-shadow: 0 8px 30px var(--shadow);
 }
 
+/* Secondary button - orange outline */
 .btn-secondary {
     background: transparent;
     color: var(--text-primary);
     border: 2px solid var(--accent);
 }
 
+/* Secondary button hover - light orange background */
 .btn-secondary:hover {
     background: var(--bg-hover);
     border-color: var(--accent-dark);
     color: var(--accent-dark);
 }
 
+/* ================================
+   SECTION CONTAINERS
+   Wrappers for projects, blog, contact sections
+   ================================ */
 .projects-container, .blog-container, .contact-container {
     max-width: 1600px;
     margin: 0 auto;
 }
 
+/* Section headers (titles like "Selected Work", "Writing") */
 .section-header {
     margin-bottom: 4rem;
 }
 
+/* Section title */
 .section-header h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
@@ -262,18 +321,24 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* Section description */
 .section-header p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--text-secondary);
 }
 
+/* ================================
+   PROJECTS GRID
+   Grid of project cards on projects page
+   ================================ */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Auto-adjusting columns */
     gap: 2rem;
     margin-bottom: 4rem;
 }
 
+/* Individual project card */
 .project-card {
     background: var(--bg-secondary);
     border: 2px solid var(--border);
@@ -287,15 +352,17 @@ nav {
     color: var(--text-primary);
 }
 
+/* Project card hover - lifts up with orange border */
 .project-card:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
     box-shadow: 0 12px 40px var(--shadow);
 }
 
+/* Project image/placeholder area */
 .project-image {
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/9; /* Maintains consistent card heights */
     background: linear-gradient(135deg, #fff9f5 0%, var(--bg-hover) 100%);
     display: flex;
     align-items: center;
@@ -306,28 +373,36 @@ nav {
     opacity: 0.4;
 }
 
+/* Project card text area */
 .project-info {
     padding: 1.5rem;
     flex: 1;
 }
 
+/* Project card title */
 .project-info h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
 }
 
+/* Project card description */
 .project-info p {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
+/* ================================
+   BLOG GRID
+   List of blog posts on blog page
+   ================================ */
 .blog-grid {
     display: grid;
     gap: 3rem;
 }
 
+/* Individual blog post card */
 .blog-post {
     background: var(--bg-secondary);
     border: 2px solid var(--border);
@@ -339,12 +414,14 @@ nav {
     display: block;
 }
 
+/* Blog post hover - lifts up with orange border */
 .blog-post:hover {
     border-color: var(--accent);
     box-shadow: 0 8px 30px var(--shadow);
     transform: translateY(-2px);
 }
 
+/* Blog post date (in orange, monospace font) */
 .blog-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
@@ -352,44 +429,56 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* Blog post title */
 .blog-post h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
+/* Blog post excerpt */
 .blog-post p {
     color: var(--text-secondary);
     font-size: 1.1rem;
     line-height: 1.7;
 }
 
+/* ================================
+   CONTACT PAGE
+   Grid of contact cards
+   ================================ */
+/* Contact content - centered */
 .contact-content {
     text-align: center;
 }
 
+/* Contact page header */
 .contact-header {
     margin-bottom: 4rem;
 }
 
+/* Contact page title */
 .contact-header h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
+/* Contact page description */
 .contact-header p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--text-secondary);
 }
 
+/* Grid of contact cards (Email, LinkedIn, etc.) */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Auto-adjusting */
     gap: 2rem;
     margin-bottom: 4rem;
 }
 
+/* Individual contact card */
 .contact-card {
     background: var(--bg-secondary);
     border: 2px solid var(--border);
@@ -403,26 +492,31 @@ nav {
     gap: 1rem;
 }
 
+/* Contact card hover - lifts up */
 .contact-card:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
     box-shadow: 0 8px 30px var(--shadow);
 }
 
+/* Contact card icon (SVG) */
 .contact-icon {
     color: var(--accent);
 }
 
+/* Contact card title (e.g., "Email", "LinkedIn") */
 .contact-card h3 {
     font-size: 1.2rem;
     font-weight: 600;
 }
 
+/* Contact card description */
 .contact-card p {
     color: var(--text-secondary);
     font-size: 0.95rem;
 }
 
+/* Bottom note on contact page */
 .contact-note {
     max-width: 600px;
     margin: 0 auto;
@@ -431,11 +525,17 @@ nav {
     border-radius: 4px;
 }
 
+/* ================================
+   PROJECT & BLOG DETAIL PAGES
+   Full page view of single project or blog post
+   ================================ */
+/* Container for detail pages */
 .project-detail, .blog-detail {
     max-width: 1000px;
     margin: 0 auto;
 }
 
+/* Back button at top of detail pages */
 .back-button {
     display: inline-flex;
     align-items: center;
@@ -446,20 +546,24 @@ nav {
     font-size: 0.95rem;
 }
 
+/* Back button hover - turns orange */
 .back-button:hover {
     color: var(--accent);
 }
 
+/* Header area of detail pages */
 .project-detail-header, .blog-detail-header {
     margin-bottom: 4rem;
 }
 
+/* Main title on detail pages */
 .project-detail-header h1, .blog-detail-header h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
 
+/* Project metadata (Year, Role, Tech) */
 .project-meta {
     display: flex;
     flex-wrap: wrap;
@@ -470,12 +574,14 @@ nav {
     color: var(--text-secondary);
 }
 
+/* Metadata label (e.g., "YEAR", "ROLE") in orange */
 .project-meta-label {
     color: var(--accent);
     text-transform: uppercase;
     font-size: 0.75rem;
 }
 
+/* Large image placeholder on project pages */
 .project-detail-image {
     width: 100%;
     height: 500px;
@@ -491,12 +597,14 @@ nav {
     opacity: 0.4;
 }
 
+/* Main content area of project/blog pages */
 .project-content, .blog-detail-content {
     font-size: 1.1rem;
     line-height: 1.9;
     color: var(--text-secondary);
 }
 
+/* Section headings in content */
 .project-content h2, .blog-detail-content h2 {
     color: var(--text-primary);
     font-size: clamp(1.5rem, 3vw, 2rem);
@@ -504,46 +612,58 @@ nav {
     font-weight: 600;
 }
 
+/* Paragraphs in content */
 .project-content p, .blog-detail-content p {
     margin-bottom: 1.5rem;
 }
 
+/* Images in content - centered automatically */
 .project-content img, .blog-detail-content img {
     max-width: 100%;
     height: auto;
-    margin: 2rem auto;
+    margin: 2rem auto; /* Centers the image */
     display: block;
     border-radius: 4px;
     border: 1px solid var(--border);
 }
 
+/* Bullet lists in project content */
 .project-content ul {
     margin: 1.5rem 0;
     padding-left: 2rem;
 }
 
+/* Bullet point styling - orange dots */
 .project-content li::marker {
     color: var(--accent);
 }
 
+/* ================================
+   RESPONSIVE DESIGN - TABLET
+   Applies to screens 1024px and smaller
+   ================================ */
 @media (max-width: 1024px) {
-    nav { padding: 1.25rem 2rem; }
-    .page-content { padding: 5.5rem 2rem 2rem; }
-    .hero-content { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-    .nav-left { gap: 1.5rem; }
+    nav { padding: 1.25rem 2rem; } /* Thinner nav */
+    .page-content { padding: 5.5rem 2rem 2rem; } /* Less padding */
+    .hero-content { grid-template-columns: 1fr; } /* Single column hero */
+    .projects-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); } /* Narrower cards */
+    .nav-left { gap: 1.5rem; } /* Less space between logo and brand name */
 }
 
+/* ================================
+   RESPONSIVE DESIGN - MOBILE
+   Applies to screens 768px and smaller
+   ================================ */
 @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-left { gap: 1rem; }
-    .brand-name { display: none; }
-    .page-content { padding: 5rem 1.5rem 2rem; }
-    .hero-visual { height: 300px; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .btn { width: 100%; text-align: center; }
-    .nav-links { gap: 1.5rem; }
-    .nav-links a { font-size: 0.9rem; }
-    .blog-post { padding: 2rem; }
-    .contact-grid { grid-template-columns: 1fr; }
+    nav { padding: 1rem 1.5rem; } /* Even thinner nav */
+    .nav-left { gap: 1rem; } /* Minimal spacing */
+    .brand-name { display: none; } /* Hide "Lines and Layers" text to save space */
+    .page-content { padding: 5rem 1.5rem 2rem; } /* Less padding all around */
+    .hero-visual { height: 300px; } /* Shorter hero logo area */
+    .projects-grid { grid-template-columns: 1fr; } /* Single column for all cards */
+    .btn { width: 100%; text-align: center; } /* Full-width buttons */
+    .nav-links { gap: 1.5rem; } /* Spacing between nav items */
+    .nav-links a { font-size: 0.9rem; } /* Slightly smaller nav text */
+    .blog-post { padding: 2rem; } /* Less padding in blog cards */
+    .contact-grid { grid-template-columns: 1fr; } /* Single column contact cards */
 }
