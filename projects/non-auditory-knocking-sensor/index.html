@@ -49,15 +49,15 @@
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Tech</span>
-                        <span>ESP32, Bluetooth, Sensing</span>
+                        <span>ESP32, Bluetooth, Piezoelectric Sensor</span>
                     </div>
                 </div>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">A pair of devices to assist people with impaired hearing to be aware of guests at their door.</p>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">A pair of devices to assist people with impaired hearing by offering a visual alert of guests at their door.</p>
             </div>
 
             <div class="project-content">
                 <h2>Overview</h2>
-<p>The Non-Auditory Knocking System (NAK), consists of two devices. The Sensing Device is mounted on the interior face of the user's door. When a visitor knocks on the door, the mounted device senses the vibrations in the door. It then wirelessly transmits this to the Alerting Device, which provides a visual indication that the door was knocked on.</p>
+<p>The Non-Auditory Knocking System (NAK) was a project for my Freshman level engineering class. The system consists of two devices. The Sensing Device is mounted on the interior face of the user's door. When a visitor knocks on the door, the mounted device senses the vibrations in the door. It then wirelessly transmits this to the Alerting Device, which provides a visual indication that the door was knocked on.</p>
 
 <h2>Sensing Device</h2>
 <p>The Sensing Device detects vibrations through the use of a piezoelectric sensor. The input from this sensor goes into an ESP32 microcontroller, which compares it to a predetermined threshold input. If the vibration exceeds the given level, it is determined to be a knock, and the ESP32 sends a signal using the Bluetooth Low Energy protocol to the Alerting Device.</p>
